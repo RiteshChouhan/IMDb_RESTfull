@@ -44,7 +44,7 @@ class Movies(Resource):
         search_desc = request.args.get('search_desc', '')
 
         conn = db_connect.connect() # connect to database
-        query_str = "select * from imdb_movies as a"
+        query_str = "select * from imdb_movies "
         
         if search_name:
             query_str = query_str + "where title like '%{}%' ".format(search_name)
